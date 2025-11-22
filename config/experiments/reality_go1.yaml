@@ -1,0 +1,30 @@
+# @package _global_
+
+# Copyright (c) 2023 Boston Dynamics AI Institute LLC. All rights reserved.
+# Configuration for Go1 robot with ZED camera
+
+defaults:
+  - /policy: vlfm_config_base
+  - _self_
+
+policy:
+  name: "RealityITMPolicyV2"
+  pointnav_policy_path: "data/pointnav_weights.pth"
+  depth_image_shape: [212, 240]  # height, width
+  pointnav_stop_radius: 0.9
+  use_max_confidence: False
+  object_map_erosion_size: 5
+  exploration_thresh: 0.0
+  obstacle_map_area_threshold: 1.5  # in square meters
+  text_prompt: "Seems like there is a target_object ahead."
+  min_obstacle_height: 0.1
+  max_obstacle_height: 1.5
+  agent_radius: 0.2  # Go1 robot radius (meters)
+
+env:
+  max_body_cam_depth: 2.5  # Maximum depth for body camera (meters)
+  max_gripper_cam_depth: 5.0  # For Go1, this is used for the single LEFT camera (kept for API compatibility)
+  max_lin_dist: 0.2  # Maximum linear displacement per step (meters)
+  max_ang_dist: 0.523599  # Maximum angular displacement per step (radians, ~30 degrees)
+  time_step: 0.7  # Time step between actions (seconds)
+  goal: "office chair"  # Target object to navigate to

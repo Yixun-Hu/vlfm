@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Tuple
 
 import cv2
 import numpy as np
-from depth_camera_filtering import filter_depth
+from vlfm.reality.depth_camera_filtering import filter_depth
 
 from vlfm.reality.pointnav_env import PointNavEnv
 from vlfm.reality.robots.camera_ids import SpotCamIds

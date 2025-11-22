@@ -186,3 +186,6 @@ habitat-lab/
 GroundingDINO/
 __pycache__/
 *.pyc
+
+perception-guarantees/
+unitree_legged_sdk/

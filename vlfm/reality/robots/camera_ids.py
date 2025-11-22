@@ -1,6 +1,12 @@
 # Copyright (c) 2023 Boston Dynamics AI Institute LLC. All rights reserved.
 
 
+class Go1CamIds:
+    r"""Enumeration of types of cameras for Go1 robot with ZED camera."""
+    
+    LEFT = "left"
+
+
 class SpotCamIds:
     r"""Enumeration of types of cameras."""
 
@@ -36,6 +42,7 @@ SHOULD_ROTATE = {
 
 # Maps camera ids to the shapes of their images
 CAM_ID_TO_SHAPE = {
+    Go1CamIds.LEFT: (1280, 720, 3),  # ZED camera HD720 resolution
     SpotCamIds.BACK_DEPTH: (424, 240, 1),
     SpotCamIds.BACK_DEPTH_IN_VISUAL_FRAME: (640, 480, 1),
     SpotCamIds.BACK_FISHEYE: (640, 480, 3),
