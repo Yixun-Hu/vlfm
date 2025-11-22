@@ -6,6 +6,12 @@ import hydra
 import numpy as np
 import torch
 from omegaconf import OmegaConf
+import sys
+
+from pathlib import Path
+project_root = Path(__file__).resolve().parent.parent.parent
+if str(project_root) not in str(sys.path):
+    sys.path.insert(0, str(project_root))
 
 from vlfm.policy.reality_policies import RealityConfig, RealityITMPolicyV2
 from vlfm.reality.objectnav_go1_env import ObjectNavEnv
