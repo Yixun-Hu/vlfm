@@ -45,7 +45,7 @@ class RealityMixin:
     @classmethod
     def from_config(cls, config: DictConfig, *args_unused: Any, **kwargs_unused: Any) -> Any:
         policy_config: VLFMConfig = config.policy
-        kwargs = {k: policy_config[k] for k in VLFMConfig.kwaarg_names}  # type: ignore
+        kwargs = {k: policy_config[k] for k in VLFMConfig.kwaarg_names()}  # type: ignore
 
         return cls(**kwargs)
 

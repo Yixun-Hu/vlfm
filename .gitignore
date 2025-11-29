@@ -189,3 +189,7 @@ __pycache__/
 
 perception-guarantees/
 unitree_legged_sdk/
+outputs/
+yolov7-e6e.pt 
+mobile_sam.pt
+groundingdino_swint_ogc.pth

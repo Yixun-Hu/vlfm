@@ -10,8 +10,9 @@ import sys
 
 from pathlib import Path
 project_root = Path(__file__).resolve().parent.parent.parent
-if str(project_root) not in str(sys.path):
-    sys.path.insert(0, str(project_root))
+project_root_str = str(project_root)
+if project_root_str not in sys.path:
+    sys.path.insert(0, project_root_str)
 
 from vlfm.policy.reality_policies import RealityConfig, RealityITMPolicyV2
 from vlfm.reality.objectnav_go1_env import ObjectNavEnv
@@ -19,7 +20,7 @@ from vlfm.reality.robots.go1_robot import Go1Robot
 from vlfm.reality.robots.go1_zed_wrapper.go1_zed import Go1Zed
 
 
-@hydra.main(version_base=None, config_path="../../config/", config_name="experiments/reality")
+@hydra.main(version_base=None, config_path="../../config/", config_name="experiments/reality_go1")
 def main(cfg: RealityConfig) -> None:
     print(OmegaConf.to_yaml(cfg))
     policy = RealityITMPolicyV2.from_config(cfg)

@@ -8,7 +8,7 @@ from typing import Any, Dict, List, Tuple
 import cv2
 import numpy as np
 import pyzed.sl as sl
-from depth_camera_filtering.depth_camera_filtering import filter_depth
+from vlfm.reality.depth_camera_filtering import filter_depth
 
 from vlfm.reality.pointnav_go1_env import PointNavEnv
 from vlfm.reality.robots.camera_ids import Go1CamIds

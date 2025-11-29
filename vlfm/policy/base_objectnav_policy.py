@@ -391,8 +391,9 @@ class VLFMConfig:
     non_coco_threshold: float = 0.4
     agent_radius: float = 0.18
 
-    @classmethod  # type: ignore
-    @property
+    # @classmethod  # type: ignore
+    # @property
+    @classmethod
     def kwaarg_names(cls) -> List[str]:
         # This returns all the fields listed above, except the name field
         return [f.name for f in fields(VLFMConfig) if f.name != "name"]
